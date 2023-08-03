@@ -15,6 +15,10 @@ public class User {
 	private int age;
 	private String password;
 	
+	public User() {
+		//default constructor 
+	}
+	
 	public User(String username, String firstname, String lastname, int age, String password) { //constructor
 		super();
 		this.username = username;
@@ -59,7 +63,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
+	@Override//to string method 
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", age=" + age + ", password=" + password + "]";
