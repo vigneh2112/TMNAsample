@@ -53,7 +53,7 @@ public String deleteUser(@RequestParam int id, HttpServletRequest request) {
 
 @RequestMapping("/edit-user")
 public String editUser(@RequestParam int id,HttpServletRequest request) {
-	
+	request.setAttribute("user",  userService.findById(id).get());
 	request.setAttribute("mode", "MODE_UPDATE");
 	return "welcomepage";
 }
@@ -75,5 +75,9 @@ public String loginUser(@ModelAttribute User user, HttpServletRequest request) {
 		return "welcomepage";
 		
 	}
+}
+@RequestMapping("/logout")
+public String logout() {
+	return "welcomepage";
 }
 }

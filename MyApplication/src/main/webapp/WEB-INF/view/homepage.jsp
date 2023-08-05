@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html lang="en">
 <head>
   <title>Welcome to your Profile page</title>
@@ -59,6 +61,9 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
+     <li><a href="/logout">logging out</a></li>
+     
+     
       </ul>
      
     </div>
@@ -81,7 +86,9 @@
 2.Cultivating a stable work environment.
 3.Ensuring employment security.</p>
    
-
+</div>
+</div>
+</div>
 <footer class="container-fluid text-center">
   <!--Section: Contact v.2-->
 <section class="mb-4">

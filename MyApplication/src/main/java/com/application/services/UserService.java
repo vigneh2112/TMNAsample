@@ -16,28 +16,38 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class UserService {
-	private final UserRepository userRepository;
+	private final UserRepository _userRepository;
+	
 	public UserService(UserRepository userRepository){
-		this.userRepository=userRepository;
+		this._userRepository=userRepository;
 	}
-	public  void  saveMyUser( User user) {
-		
-		userRepository.save (user);
+	
+	//save
+	public  void  saveMyUser( User user) {		
+		_userRepository.save (user);
 	}
-	public List<User>showAllUsers(){
+	
+	//List
+	public List<User> showAllUsers(){
 		List<User>users=new ArrayList<User>();
-		for(User user:userRepository.findAll()) {
+		for(User user: _userRepository.findAll()) {
 			users.add(user);
 		}
 		return users;
 	}
 	
+	//delete
 	public void deleteMyUser(int id) {
-		userRepository.deleteById(id);
+		_userRepository.deleteById(id);
+	}
+	
+	//findById
+	public Optional<User> findById(int id) {
+		 return _userRepository.findById(id);
 	}
 	
 	public User findByUsernameAndPassword(String username, String password) {
-		return userRepository.findByUsernameAndPassword(username, password);
+		return _userRepository.findByUsernameAndPassword(username, password);
 	}
 
 }
