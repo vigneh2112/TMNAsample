@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Login" />
+						<input type="submit" class="btn btn-success"" value="Login" />
 						<a class="btn btn-primary" href="/register" role="button">Register</a>
 					</div>
 					</form>

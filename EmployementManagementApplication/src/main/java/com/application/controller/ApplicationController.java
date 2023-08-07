@@ -31,10 +31,10 @@ public class ApplicationController {
 	public String registration(HttpServletRequest request) {
 		return"register";
 	}
-	@PostMapping("/create-user")
+	@RequestMapping("/create-user")
 	public String createUser(@ModelAttribute User user,BindingResult bindingResult,HttpServletRequest  request) {
 		userService.saveMyUser(user);
-	    return "login";
+	    return "redirect:/login";
 	}
 	
 @PostMapping("/save-user")
@@ -85,6 +85,6 @@ public String loginUser(@ModelAttribute User user, HttpServletRequest request) {
 @RequestMapping("/logout")
 public String logout(HttpServletRequest request) {
 	request.setAttribute("mode", "MODE_HOME");
-	return "welcomepage";
+	return "redirect:/welcome";
 }
 }
