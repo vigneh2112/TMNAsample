@@ -47,6 +47,7 @@ public class ApplicationController {
 @RequestMapping("/show-users")
 	public String showAllUsers(HttpServletRequest request) {
 	request.setAttribute("users", userService.showAllUsers());
+	
 	return "showusers";
 }
 

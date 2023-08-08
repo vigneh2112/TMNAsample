@@ -11,11 +11,5 @@ public class EmployementManagementApplication {
 		SpringApplication.run(EmployementManagementApplication.class, args);
 	}
 	
-	//TODO:
-		//welcomepage -> different pages
-	  //backend update to refer individual pages
-	// MyAPplication to proper name change
-	//login+register as a landing page
-	//remove login register from top menu
-
+	
 }

@@ -13,9 +13,10 @@
             <div class="form-group row">
                 <label for="inputFirstName" class="col-sm-3 col-form-label">First Name:</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputFirstName"  name="firstname"  value="${user.firstname }" required>
+                    <input type="text" class="form-control" id="inputFirstName"  name="firstname"  maxlength="12" value="${user.firstname }" required>
                     <div class="invalid-feedback">
                         Please enter your first name.
+                        Firstname should within 12 characters
                     </div>
                 </div>
             </div>
@@ -40,10 +41,12 @@
             <div class="form-group row">
                 <label for="inputUsername" class="col-sm-3 col-form-label">Username:</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputUsername" name="username" value="${user.username }" required>
+                    <input type="text" class="form-control" id="inputUsername" name="username"maxlength="10" value="${user.username }" required>
                     <div class="invalid-feedback">
                         Please enter a username.
+                          Please enter a username with in 10 characters
                     </div>
+
                 </div>
             </div>
             <div class="form-group row">
@@ -87,6 +90,29 @@
                 });
             }, false);
         })();
+        document.querySelector('form').addEventListener('submit',function(event){
+        	const inputField = document.getElementBYId('inputField');
+        	const errorFeedback=inputField.nextElementSibling;
+        	if(inputField.value.length>10){
+        		event.preventDefault();
+        		inputField.classList.add('is-invalid');
+        		errorFeedback.style.display='block';
+        	}else{
+        		inputField.classList.remove('is-invalid');
+        		errorFeedback.style.display='none';
+        		
+        	}
+        	if(inputField.value.length>12){
+        		event.preventDefault();
+        		inputField.classList.add('is-invalid');
+        		errorFeedback.style.display='block';
+        	}else{
+        		inputField.classList.remove('is-invalid');
+        		errorFeedback.style.display='none';
+        	
+        	}
+        
+        });
     </script>
 </body>
 </html>
