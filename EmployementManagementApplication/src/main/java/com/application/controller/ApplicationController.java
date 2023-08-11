@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.application.modal.User;
 import com.application.services.UserService;
+import javax.servlet.http.HttpServletRequest;
 
-import jakarta.servlet.http.HttpServletRequest;
 @Controller   // handles the req 
 public class ApplicationController {
 	@Autowired
@@ -63,8 +63,6 @@ public String editUser(@RequestParam int id,HttpServletRequest request) {
 	request.setAttribute("user",  userService.findById(id).get());
 	return "edituser";
 }
-
-
 
 @RequestMapping("/login")
 public String login(HttpServletRequest request) {

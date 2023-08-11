@@ -1,13 +1,11 @@
 package com.application.modal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name="person")
+
+@javax.persistence.Entity
+@javax.persistence.Table(name="person")
 public class User {
-	@Id//primary key
+	@javax.persistence.Id
 	private int id;
 	private String username;
 	private String firstname;

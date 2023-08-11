@@ -5,19 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.application.modal.User;
 import com.application.repository.UserRepository;
 
-import jakarta.transaction.Transactional;
 
 
 @Service
 @Transactional
 public class UserService {
-	private final UserRepository _userRepository;
-	
+	private final UserRepository _userRepository;//instance of User repository
+	//constructor of UserRepository
 	public UserService(UserRepository userRepository){
 		this._userRepository=userRepository;
 	}
@@ -27,7 +28,7 @@ public class UserService {
 		_userRepository.save (user);
 	}
 	
-	//List
+	//List method to  show all users 
 	public List<User> showAllUsers(){
 		List<User>users=new ArrayList<User>();
 		for(User user: _userRepository.findAll()) {
