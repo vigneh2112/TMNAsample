@@ -2,6 +2,7 @@ package com.application.services;//persist the data from data base
 
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,18 +30,19 @@ public class UserService {
 	}
 	
 	//List method to  show all users 
-	public List<User> showAllUsers(){
-		List<User>users=new ArrayList<User>();
-		for(User user: _userRepository.findAll()) {
-			users.add(user);
-		}
-		return users;
-	}
+	public List<User> showAllUsers() {
+        List<User> users = new ArrayList<>();
+        _userRepository.findAll().forEach(user -> users.add(user));
+        return users;
+    }
 	
 	//delete
 	public void deleteMyUser(int id) {
-		_userRepository.deleteById(id);
-	}
+        ((Collection<User>) _userRepository.findAll()).stream()
+            .filter(user -> user.getId() == id)
+            .findFirst()
+            .ifPresent(user -> _userRepository.delete(user));
+    }
 	
 	//findById
 	public Optional<User> findById(int id) {

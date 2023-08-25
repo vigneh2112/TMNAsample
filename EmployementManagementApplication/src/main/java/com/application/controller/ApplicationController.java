@@ -29,6 +29,7 @@ public class ApplicationController {
 
 	@RequestMapping("/register")
 	public String registration(HttpServletRequest request) {
+		
 		return"register";
 	}
 	@RequestMapping("/create-user")
@@ -40,7 +41,7 @@ public class ApplicationController {
 @PostMapping("/save-user")
 	public String registerUser(@ModelAttribute User user,BindingResult bindingResult,HttpServletRequest  request) {
 		userService.saveMyUser(user);
-		//request.setAttribute("users", userService.showAllUsers());
+		
 		return "redirect:/show-users" ;
 	}
 

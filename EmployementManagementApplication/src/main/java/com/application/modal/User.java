@@ -13,7 +13,8 @@ public class User {
 	private int age;
 	private String password;
 	
-	public User() {
+	
+   public User() {
 		//default constructor 
 	}
 	
@@ -24,6 +25,7 @@ public class User {
 		this.lastname = lastname;
 		this.age = age;
 		this.password = password;
+		
 	}
 	public int getId() {
 		return id;
@@ -61,11 +63,19 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override//to string method 
+	
+	
+	
+
+	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", age=" + age + ", password=" + password + "]";
 	}
+
+	
+
+	
 	
 	
 	

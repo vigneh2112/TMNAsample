@@ -22,7 +22,7 @@
 								<th>First Name</th>
 								<th>LastName</th>
 								<th>Age</th>
-								<th>Delete</th>
+					            <th>Delete</th>
 								<th>Edit</th>
 							</tr>
 						</thead>
@@ -34,6 +34,7 @@
 									<td>${user.firstname}</td>
 									<td>${user.lastname}</td>
 									<td>${user.age}</td>
+									
 									<td><a href="/delete-user?id=${user.id }"><span
 											class="glyphicon glyphicon-trash"></span></a></td>
 										<td><a href="/edit-user?id=${user.id }"><span
